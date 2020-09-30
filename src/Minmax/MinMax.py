@@ -122,11 +122,8 @@ class Board():
 						self.board[i][j] = ''
 						if  score > bestscore:					# Check if move is best move or not
 							bestscore = score
-							bestMove = [i,j]
-		a = bestMove[0]
-		b = bestMove[1]
-		self.board[a][b] = self.ai 								# Play the best move 
-		self.currentPlayer = 'HumanPlayer'						# Pass the Game to Human Player
+							Move = [i,j]					
+		return Move
 
 
 	####################################################################
@@ -146,34 +143,32 @@ class Board():
 	####################################################################
 	#                Main Drive Function                               #
 	####################################################################
-if __name__ == '__main__':
-	print("Let the Game Begin")
-	board = Board()													# Creating and object
-	while board.isBoardNotFull():									# Continue playing till the board is full
-		if board.currentPlayer == 'AIPlayer':						# Call bestMove function for AIPlayer
-			board.bestMove()
+# if __name__ == '__main__':
+# 	print("Let the Game Begin")
+# 	board = Board()													# Creating and object
+# 	while board.isBoardNotFull():									# Continue playing till the board is full
+# 		if board.currentPlayer == 'AIPlayer':						# Call bestMove function for AIPlayer
+# 			board.bestMove()
 			
-		else:														# Human's Turn
-			currentwinner=board.checkWinner()						# Check for winner 
-			if board.isBoardNotFull() and currentwinner != None:	# Play if board is not full and winner is not obtained
-				row = int(input("Enter row of next move"))			# Y-coordinates of Human move 
-				column = int(input("Enter column of next move"))	# X-coordinates of Human move 
-				board.board[row][column] = board.human 				# Play Human move
-				board.currentPlayer = 'AIPlayer' 					# Change to AIPlayer 
-		print(board)	
-		if board.checkWinner() != '':								# Check for Winner 
-			result = board.checkWinner() 						
-			if result != None:
-				ans = board.scores[result]
-				if ans == 10:
-					winner = 'X'
-				elif ans == -10:
-					winner = 'O'
-				else:
-					Winner = 'Its a tie'			
-			break
+# 		else:														# Human's Turn
+# 			currentwinner=board.checkWinner()						# Check for winner 
+# 			if board.isBoardNotFull() and currentwinner != None:	# Play if board is not full and winner is not obtained
+# 				row = int(input("Enter row of next move"))			# Y-coordinates of Human move 
+# 				column = int(input("Enter column of next move"))	# X-coordinates of Human move 
+# 				board.board[row][column] = board.human 				# Play Human move
+# 				board.currentPlayer = 'AIPlayer' 					# Change to AIPlayer 
+# 		print(board)	
+# 		if board.checkWinner() != '':								# Check for Winner 
+# 			result = board.checkWinner() 						
+# 			if result != None:
+# 				ans = board.scores[result]
+# 				if ans == 10:
+# 					winner = 'X'
+# 				elif ans == -10:
+# 					winner = 'O'
+# 				else:
+# 					Winner = 'Its a tie'			
+# 			break
 
 
-	print("Winner is: ",board.winner)								# Declare the winner 
-
-		
+# 	print("Winner is: ",board.winner)								# Declare the winner 
