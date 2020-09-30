@@ -20,7 +20,8 @@ The Application was built using well known
 
 	*`Tic-Tac-Toe/src/MinMaxui.py`
 		PyQt5 based GUI creating function and managing User moves and computer's moves.
+		
 	*`Tic-Tac-Toe/src/MinMax.ui`
 		xml based UI file for creating MinMaxui.py
 
-####Note: Many changes are done in MinMaxui.py after creating it from MinMax.ui 
+> #### Note: Many changes are done in MinMaxui.py after creating it from MinMax.ui 
