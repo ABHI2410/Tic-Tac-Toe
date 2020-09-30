@@ -15,7 +15,13 @@ class Ui_MainWindow():
     def __init__(self,board):
         self.board = board   
 
+
+    ####################################################################
+    #            Setingup the layout of the game                       #
+    ####################################################################
+    
     def setupUi(self, MainWindow):
+
         ## Main window setting
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
@@ -25,9 +31,11 @@ class Ui_MainWindow():
         MainWindow.setMouseTracking(False)
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet("background:white;")
+
         ## Centering the window
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+
         ## new game button
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(55, 630, 145, 41))
@@ -36,7 +44,8 @@ class Ui_MainWindow():
         self.pushButton.setStyleSheet("font-weight: 400;text-align: center;white-space: nowrap;vertical-align: middle;border: 1px solid transparent;padding: 6px 12px;font-size: 1rem;line-height: 1.5;border-radius: 4px;color: #fff;background-color: #66e;border-color: #66e;")
         self.pushButton.setObjectName("pushButton")
         self.pushButton.clicked.connect(lambda: self.newgame())
-        ## Forfit game
+
+        ## giveup game button
         self.pushButton_1 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_1.setGeometry(QtCore.QRect(260, 630, 271, 41))
         self.pushButton_1.setMinimumSize(QtCore.QSize(141, 41))
@@ -44,6 +53,7 @@ class Ui_MainWindow():
         self.pushButton_1.setStyleSheet("font-weight: 400;text-align: center;white-space: nowrap;vertical-align: middle;border: 1px solid transparent;padding: 6px 12px;font-size: 1rem;line-height: 1.5;border-radius: 4px;color: #fff;background-color: #B00020;border-color: #B0020;")
         self.pushButton_1.setObjectName("pushButton")
         self.pushButton_1.clicked.connect(lambda: self.giveup())
+
         ## 0,0 position 
         self.textBrowser = QtWidgets.QPushButton(self.centralwidget)
         self.textBrowser.setGeometry(QtCore.QRect(20, 30, 201, 171))
@@ -53,6 +63,7 @@ class Ui_MainWindow():
         self.textBrowser.setObjectName("textBrowser")
         self.textBrowser.setStyleSheet("font-weight: 400;text-align: center;white-space: nowrap;vertical-align: middle;border: 1px solid black;padding: 6px 12px;font-size: 72px;color: #000;background-color: #fff;border-color: #000;")
         self.textBrowser.clicked.connect(lambda:self.humanmove([0,0]))
+
         ## 0,1 position
         self.textBrowser_2 = QtWidgets.QPushButton(self.centralwidget)
         self.textBrowser_2.setGeometry(QtCore.QRect(220, 30, 201, 171))
@@ -61,6 +72,7 @@ class Ui_MainWindow():
         self.textBrowser_2.setObjectName("textBrowser_2")
         self.textBrowser_2.setStyleSheet("font-weight: 400;text-align: center;white-space: nowrap;vertical-align: middle;border: 1px solid black;padding: 6px 12px;font-size: 72px;color: #000;background-color: #fff;border-color: #000;")
         self.textBrowser_2.clicked.connect(lambda:self.humanmove([0,1]))
+
         ## 0,2 postion
         self.textBrowser_3 = QtWidgets.QPushButton(self.centralwidget)
         self.textBrowser_3.setGeometry(QtCore.QRect(420, 30, 201, 171))
@@ -69,7 +81,8 @@ class Ui_MainWindow():
         self.textBrowser_3.setObjectName("textBrowser_3")
         self.textBrowser_3.setStyleSheet("font-weight: 400;text-align: center;white-space: nowrap;vertical-align: middle;border: 1px solid black;padding: 6px 12px;font-size: 72px;color: #000;background-color: #fff;border-color: #000;")
         self.textBrowser_3.clicked.connect(lambda:self.humanmove([0,2]))
-        ## 1,0 position
+
+        ## 1,1 position
         self.textBrowser_4 = QtWidgets.QPushButton(self.centralwidget)
         self.textBrowser_4.setGeometry(QtCore.QRect(220, 200, 201, 171))
         self.textBrowser_4.setMinimumSize(QtCore.QSize(201, 171))
@@ -77,7 +90,8 @@ class Ui_MainWindow():
         self.textBrowser_4.setObjectName("textBrowser_4")
         self.textBrowser_4.setStyleSheet("font-weight: 400;text-align: center;white-space: nowrap;vertical-align: middle;border: 1px solid black;padding: 6px 12px;font-size: 72px;color: #000;background-color: #fff;border-color: #000;")
         self.textBrowser_4.clicked.connect(lambda:self.humanmove([1,1]))
-        ## 1,1 position
+
+        ## 1,0 position
         self.textBrowser_5 = QtWidgets.QPushButton(self.centralwidget)
         self.textBrowser_5.setGeometry(QtCore.QRect(20, 200, 201, 171))
         self.textBrowser_5.setMinimumSize(QtCore.QSize(201, 171))
@@ -85,7 +99,8 @@ class Ui_MainWindow():
         self.textBrowser_5.setObjectName("textBrowser_5")
         self.textBrowser_5.setStyleSheet("font-weight: 400;text-align: center;white-space: nowrap;vertical-align: middle;border: 1px solid black;padding: 6px 12px;font-size: 72px;color: #000;background-color: #fff;border-color: #000;")
         self.textBrowser_5.clicked.connect(lambda:self.humanmove([1,0]))
-        ## 1,2 position
+
+        ## 2,0 position
         self.textBrowser_6 = QtWidgets.QPushButton(self.centralwidget)
         self.textBrowser_6.setGeometry(QtCore.QRect(20, 370, 201, 171))
         self.textBrowser_6.setMinimumSize(QtCore.QSize(201, 171))
@@ -93,7 +108,8 @@ class Ui_MainWindow():
         self.textBrowser_6.setObjectName("textBrowser_6")
         self.textBrowser_6.setStyleSheet("font-weight: 400;text-align: center;white-space: nowrap;vertical-align: middle;border: 1px solid black;padding: 6px 12px;font-size: 72px;color: #000;background-color: #fff;border-color: #000;")
         self.textBrowser_6.clicked.connect(lambda:self.humanmove([2,0]))
-        ## 2,0 position
+
+        ## 2,2 position
         self.textBrowser_7 = QtWidgets.QPushButton(self.centralwidget)
         self.textBrowser_7.setGeometry(QtCore.QRect(420, 370, 201, 171))
         self.textBrowser_7.setMinimumSize(QtCore.QSize(201, 171))
@@ -101,6 +117,7 @@ class Ui_MainWindow():
         self.textBrowser_7.setObjectName("textBrowser_7")
         self.textBrowser_7.setStyleSheet("font-weight: 400;text-align: center;white-space: nowrap;vertical-align: middle;border: 1px solid black;padding: 6px 12px;font-size: 72px;color: #000;background-color: #fff;border-color: #000;")
         self.textBrowser_7.clicked.connect(lambda:self.humanmove([2,2]))
+
         ## 2,1 position
         self.textBrowser_8 = QtWidgets.QPushButton(self.centralwidget)
         self.textBrowser_8.setGeometry(QtCore.QRect(220, 370, 201, 171))
@@ -109,7 +126,8 @@ class Ui_MainWindow():
         self.textBrowser_8.setObjectName("textBrowser_8")
         self.textBrowser_8.setStyleSheet("font-weight: 400;text-align: center;white-space: nowrap;vertical-align: middle;border: 1px solid black;padding: 6px 12px;font-size: 72px;color: #000;background-color: #fff;border-color: #000;")
         self.textBrowser_8.clicked.connect(lambda:self.humanmove([2,1]))
-        ## 2,2 position
+
+        ## 1,2 position
         self.textBrowser_9 = QtWidgets.QPushButton(self.centralwidget)
         self.textBrowser_9.setGeometry(QtCore.QRect(420, 200, 201, 171))
         self.textBrowser_9.setMinimumSize(QtCore.QSize(201, 171))
@@ -117,6 +135,7 @@ class Ui_MainWindow():
         self.textBrowser_9.setObjectName("textBrowser_9")
         self.textBrowser_9.setStyleSheet("font-weight: 400;text-align: center;white-space: nowrap;vertical-align: middle;border: 1px solid black;padding: 6px 12px;font-size: 72px;color: #000;background-color: #fff;border-color: #000;")
         self.textBrowser_9.clicked.connect(lambda:self.humanmove([1,2]))
+
         ## winner declaration 
         self.textBrowser_10 = QtWidgets.QTextBrowser(self.centralwidget)
         self.textBrowser_10.setGeometry(QtCore.QRect(20, 550, 601, 61))
@@ -191,11 +210,17 @@ class Ui_MainWindow():
         # self.label = QtWidgets.QLabel(self.centralwidget)
         # self.label.setGeometry(QtCore.QRect(520, 620, 85, 16))
         # self.label.setObjectName("label")
+
+        ## Additional widgets
         MainWindow.setCentralWidget(self.centralwidget)
+
+        ## Menu Bar
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 642, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
+
+        ## Status Bar
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -215,17 +240,27 @@ class Ui_MainWindow():
     #     else:
     #         self.label.setText(_translate("MainWindow", "Difficult"))
 
-
+    ####################################################################
+    #            Declaring the winner on the GUI                       #
+    ####################################################################
     def declareWinner(self):
         self.textBrowser_10.setText(self.board.winner)
         self.textBrowser_10.setFont(QFont('Arial',24))
         self.textBrowser_10.setAlignment(Qt.AlignCenter)
 
+
+    ####################################################################
+    #            Removing the winner from the GUI                      #
+    ####################################################################
     def removeWinner(self):
         self.textBrowser_10.setText('')
         self.textBrowser_10.setFont(QFont('Arial',24))
         self.textBrowser_10.setAlignment(Qt.AlignCenter)
 
+
+    ####################################################################
+    #                           Users move                             #
+    ####################################################################
     def humanmove(self,position):
         i = position[0]
         j = position[1]
@@ -236,9 +271,12 @@ class Ui_MainWindow():
             self.aimove()
         
 
+    ####################################################################
+    #                    Deciding Computer Move                        #
+    ####################################################################
     def aimove(self):
-        if self.board.isBoardNotFull():                                  # Continue playing till the board is full
-            if self.board.currentPlayer == 'AIPlayer':                      # Call bestMove function for AIPlayer
+        if self.board.isBoardNotFull():                                 
+            if self.board.currentPlayer == 'AIPlayer':                      
                 move = self.board.bestMove()
                 i = move[0]
                 j = move[1]
@@ -259,7 +297,11 @@ class Ui_MainWindow():
                         self.DisableGame()        
                 self.declareWinner()
 
-        
+
+
+    ####################################################################
+    #                      Disabling User Moves                        #
+    #################################################################### 
     def DisableGame(self):
         positionOnGui = [[self.textBrowser,self.textBrowser_2,self.textBrowser_3],
                         [self.textBrowser_5,self.textBrowser_4,self.textBrowser_9],
@@ -267,6 +309,11 @@ class Ui_MainWindow():
         for i in range(len(positionOnGui)):
             for j in range(len(positionOnGui[i])):
                 positionOnGui[i][j].setEnabled(False)
+
+
+    ####################################################################
+    #                    Enabling Users Movea                          #
+    ####################################################################
     def EnableGame(self):
         positionOnGui = [[self.textBrowser,self.textBrowser_2,self.textBrowser_3],
                         [self.textBrowser_5,self.textBrowser_4,self.textBrowser_9],
@@ -275,6 +322,10 @@ class Ui_MainWindow():
             for j in range(len(positionOnGui[i])):
                 positionOnGui[i][j].setEnabled(True)
 
+
+    ####################################################################
+    #            Reflecting Moves on the GUI                           #
+    ####################################################################
     def updateboard(self):
         positionOnGui = [[self.textBrowser,self.textBrowser_2,self.textBrowser_3],
                         [self.textBrowser_5,self.textBrowser_4,self.textBrowser_9],
@@ -284,6 +335,10 @@ class Ui_MainWindow():
                 positionOnGui[i][j].setText(self.board.board[i][j])
                 positionOnGui[i][j].setFont(QFont('Arial', 72))
 
+
+    ####################################################################
+    #            Giving up game button logic                           #
+    ####################################################################
     def giveup(self):
         self.board.winner = 'Winner is X'
         self.declareWinner()
@@ -291,6 +346,9 @@ class Ui_MainWindow():
         self.DisableGame() 
         
 
+    ####################################################################
+    #                    New Game button Login                         #
+    ####################################################################
     def newgame(self):
         self.board.board = [
                 ['','',''],
@@ -303,10 +361,16 @@ class Ui_MainWindow():
         self.board.currentPlayer = 'AIPlayer'
         self.aimove()  
 
+
+    ####################################################################
+    #            Selecting Difficult scean of game                     #
+    ####################################################################
     def startDifficult(self):
         self.aimove()                                                        
         
-
+    ####################################################################
+    #            Starting the game                                     #
+    ####################################################################
     def start(self):
         self.startDifficult()
         # while Board.checkWinner() == "":
@@ -314,6 +378,10 @@ class Ui_MainWindow():
         #       Board.bestMove()
 
 
+
+    ####################################################################
+    #            renaming objects on the GUI                           #
+    ####################################################################
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Tic-Tac-Toe"))
@@ -322,11 +390,3 @@ class Ui_MainWindow():
         # self.label.setText(_translate("MainWindow", "Easy"))
 
 
-# if __name__ == "__main__":
-#     import sys
-#     app = QtWidgets.QApplication(sys.argv)
-#     MainWindow = QtWidgets.QMainWindow()
-#     ui = Ui_MainWindow()
-#     ui.setupUi(MainWindow)
-#     MainWindow.show()
-#     sys.exit(app.exec_())
