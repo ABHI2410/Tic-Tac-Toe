@@ -122,11 +122,8 @@ class Board():
 						self.board[i][j] = ''
 						if  score > bestscore:					# Check if move is best move or not
 							bestscore = score
-							bestMove = [i,j]
-		a = bestMove[0]
-		b = bestMove[1]
-		self.board[a][b] = self.ai 								# Play the best move 
-		self.currentPlayer = 'HumanPlayer'						# Pass the Game to Human Player
+							Move = [i,j]					
+		return Move
 
 
 	####################################################################
@@ -175,5 +172,3 @@ class Board():
 
 
 # 	print("Winner is: ",board.winner)								# Declare the winner 
-
-# 		
